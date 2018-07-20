@@ -1,0 +1,51 @@
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+
+browser = webdriver.Firefox()
+
+browser.get('https://tessaus.invacare-o2.com')
+assert 'Invacare' in browser.title
+print(browser.title)
+
+elem_email = browser.find_element_by_id("idEmailAddress")
+elem_pass  = browser.find_element_by_id("idPassword")
+elem_login = browser.find_element_by_id("loginButton")
+
+
+
+elem_email.click()
+elem_email.clear()
+elem_email.send_keys("test@web.test")
+
+elem_pass.click()
+elem_pass.clear()
+elem_pass.send_keys("password")
+
+elem_login.click()
+
+browser.implicitly_wait(5)
+
+elem_menu  = browser.find_element_by_id("idMenuButton")
+elem_logout= browser.find_element_by_id("logoutButton")
+
+elem_menu.click()
+
+elem_logout.click()
+
+
+#
+#
+# driver.find_element_by_id("idEmailAddress").click()
+#         driver.find_element_by_id("idEmailAddress").clear()
+#         driver.find_element_by_id("idEmailAddress").send_keys("test@web.test")
+#         driver.find_element_by_id("idPassword").click()
+#         driver.find_element_by_id("idPassword").clear()
+#         driver.find_element_by_id("idPassword").send_keys("password")
+#         driver.find_element_by_id("loginButton").click()
+#         driver.find_element_by_id("idMenuButton").click()
+#         driver.find_element_by_id("logoutButton").click()
+
+# elem = browser.find_element_by_name('p')  # Find the search box
+# elem.send_keys('seleniumhq' + Keys.RETURN)
+
+browser.quit()
