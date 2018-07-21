@@ -45,3 +45,27 @@ print whole_cucumbers_per_person
 float_cucumbers_per_person = float(cucumbers)/float(num_people)
 print float_cucumbers_per_person
 
+# len, lower and upper 
+my_string = "Darcular" 
+print len(my_string)
+print my_string.lower()
+print my_string.upper()
+
+#Print Index
+fifth_letter = "MONTY"[4]
+print fifth_letter
+
+#String format
+string_1 = "Beijing"
+string_2 = "city"
+print "Let's  go to %s. It is a beautiful %s." % (string_1, string_2)
+
+name = raw_input("What is your name?")
+job = raw_input("What is your job?")
+team = raw_input("What is your favorite super rugby team?")
+print "Ah, so your name is %s, your job is %s, " \
+"and your favorite super rugby team is %s." % (name, job, team)
+
+
+
+
