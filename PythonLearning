@@ -45,3 +45,25 @@ print whole_cucumbers_per_person
 float_cucumbers_per_person = float(cucumbers)/float(num_people)
 print float_cucumbers_per_person
 
+# Print raw input
+a = raw_input("hey mate")
+b = raw_input("long time no see")
+c = raw_input("hey friend")
+d = raw_input("long time no see")
+
+print "when he said hey mate, I said %s. when he said hey friend, I said %s" % (a,c) 
+
+# len and upper 
+my_string = "Darcular" 
+print len(my_string)
+print my_string.upper()
+
+
+
+
+
+
+
+
+
+
