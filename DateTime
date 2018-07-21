@@ -19,3 +19,9 @@ print "%02d/%02d/%04d"%(now.day, now.month, now.year)
 from datetime import datetime
 now = datetime.now()
 print "%02d:%02d:%02d" % (now.hour, now.minute, now.second)
+
+# Print dd/mm/yyyy ss:mm:hh
+from datetime import datetime
+now = datetime.now()
+
+print "%02d/%02d/%02d %02d:%02d:%02d" % (now.day, now.month, now.year, now.hour, now.minute, now.second)
