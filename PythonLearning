@@ -1,51 +1,47 @@
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
+# Float value
+float_1 = 0.25
+float_2 = 40.0
 
-browser = webdriver.Firefox()
+product = float(float_1) * float(float_2)
+print product
 
-browser.get('https://tessaus.invacare-o2.com')
-assert 'Invacare' in browser.title
-print(browser.title)
+big_string = "The product was " + str(product)
+print big_string
 
-elem_email = browser.find_element_by_id("idEmailAddress")
-elem_pass  = browser.find_element_by_id("idPassword")
-elem_login = browser.find_element_by_id("loginButton")
+# Multi string lines
+haiku = """The old pond,
+A frog jumps in:
+Plop!"""
 
+# Updating variables
+january_to_june_rainfall = 1.93 + 0.71 + 3.53 + 3.41 + 3.69 + 4.50
+annual_rainfall = january_to_june_rainfall
 
+july_rainfall = 1.05
+annual_rainfall += july_rainfall
 
-elem_email.click()
-elem_email.clear()
-elem_email.send_keys("test@web.test")
+august_rainfall = 4.91
+annual_rainfall += august_rainfall
 
-elem_pass.click()
-elem_pass.clear()
-elem_pass.send_keys("password")
+september_rainfall = 5.16
+annual_rainfall += september_rainfall
 
-elem_login.click()
+october_rainfall = 7.20
+annual_rainfall += october_rainfall
 
-browser.implicitly_wait(5)
+november_rainfall = 5.06
+annual_rainfall += november_rainfall
 
-elem_menu  = browser.find_element_by_id("idMenuButton")
-elem_logout= browser.find_element_by_id("logoutButton")
+december_rainfall = 4.06
+annual_rainfall += december_rainfall
 
-elem_menu.click()
+# Two types of division
+cucumbers = 100
+num_people = 6
 
-elem_logout.click()
+whole_cucumbers_per_person = cucumbers/num_people
+print whole_cucumbers_per_person
 
+float_cucumbers_per_person = float(cucumbers)/float(num_people)
+print float_cucumbers_per_person
 
-#
-#
-# driver.find_element_by_id("idEmailAddress").click()
-#         driver.find_element_by_id("idEmailAddress").clear()
-#         driver.find_element_by_id("idEmailAddress").send_keys("test@web.test")
-#         driver.find_element_by_id("idPassword").click()
-#         driver.find_element_by_id("idPassword").clear()
-#         driver.find_element_by_id("idPassword").send_keys("password")
-#         driver.find_element_by_id("loginButton").click()
-#         driver.find_element_by_id("idMenuButton").click()
-#         driver.find_element_by_id("logoutButton").click()
-
-# elem = browser.find_element_by_name('p')  # Find the search box
-# elem.send_keys('seleniumhq' + Keys.RETURN)
-
-browser.quit()
