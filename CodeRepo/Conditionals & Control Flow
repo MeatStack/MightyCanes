@@ -1,4 +1,5 @@
 # Change the last commit message
+git commit --amend
 git commit --amend -m "New commit message"
 
 # if/else example
