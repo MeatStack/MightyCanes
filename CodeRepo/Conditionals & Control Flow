@@ -1,3 +1,6 @@
+# Change the last commit message
+git commit --amend -m "New commit message"
+
 # if/else example
 def clinic():
     print "You've just entered the clinic!"
