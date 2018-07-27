@@ -1,0 +1,24 @@
+# Verify input
+original = raw_input("Enter a word:")
+if len(original) > 0 and original.isalpha():
+  print original
+else:
+  print "Input either empty or contains non-letter characters!"
+
+# define PigLatin ay
+pyg = 'ay'
+# Ask for input 
+original = raw_input('Enter a word:')
+# Verify len and characters
+if len(original) > 0 and original.isalpha():
+  #lower case
+  word = original.lower()
+  #define first letter
+  first = word[0]
+  #define new world
+  new_word = word + first + pyg
+  #slicing first letter
+  new_word = new_word[1:len(new_word)]
+  print new_word
+else:
+    print 'empty'
