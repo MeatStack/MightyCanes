@@ -54,3 +54,21 @@ def distance_from_zero(arg):
 biggest_number(-10, -5, 99,5, 10)
 smallest_number(-10,-88, -5, 5, 10)
 distance_from_zero(-10)
+-----------------------------------------------------------------------------------------------
+# Check the value of "s"
+def shut_down(s):
+  if s == "yes":
+    return "Shutting down"
+  elif s == "no":
+    return "Shutdown aborted"
+  else:
+    return "Sorry"
+-----------------------------------------------------------------------------------------------
+# Built-In Functions
+def distance_from_zero(t):
+  if type(t) == int or type(t) == float:
+    print abs(t)
+  else:
+    print "Nope"
+    
+distance_from_zero(-6.6)
