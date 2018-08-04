@@ -1,14 +1,52 @@
-# Open browser then search a keyword
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 
-browser = webdriver.Chrome()
+# define browser
+driver = webdriver.Chrome()
 
-browser.get("http://www.baidu.com/")
-browser.find_element_by_id("kw").clear()
-browser.find_element_by_id("kw").send_keys("hi")
-browser.find_element_by_id("form").submit()
-browser.find_element_by_id("kw").clear()
-browser.find_element_by_id("kw").send_keys("hello")
-browser.find_element_by_id("form").submit()
+# open page
+driver.get("")
 
-browser.quit()
+# click forgot password button
+ForgotPassword = driver.find_element_by_id("idForgotPassword")
+ForgotPassword.click()
+
+# back to login page
+driver.back()
+
+# click, clear and type login email
+LoginEmail = driver.find_element_by_id("idEmailAddress")
+LoginEmail.click()
+LoginEmail.clear()
+LoginEmail.send_keys("")
+
+# click, clear and type login password
+LoginPassword = driver.find_element_by_id("idPassword")
+LoginPassword.click()
+LoginPassword.clear()
+LoginPassword.send_keys("")
+
+# click login button
+LoginButton = driver.find_element_by_id("loginButton")
+
+if LoginButton.is_displayed():
+    print("Login button is visible")
+else:
+    print("Login button is NOT visible")
+
+LoginButton.click()
+
+driver.implicitly_wait(10)
+
+# verify the logo
+LogoIcon = driver.find_element_by_xpath("//*[@alt=' ']")
+
+if LogoIcon.is_displayed():
+    print("TUO")
+else:
+    print("Logo icon is NOT visible")
+
+# verify the search bar
+#SearchBar = driver.find_element_by_id("idSearch")
+#SearchBar.send_keys("big")
+
