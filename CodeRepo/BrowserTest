@@ -5,7 +5,7 @@ from selenium.webdriver.common.keys import Keys
 driver = webdriver.Chrome()
 
 # open page
-driver.get("")
+driver.get(" ")
 
 # click forgot password button
 ForgotPassword = driver.find_element_by_id("idForgotPassword")
@@ -18,13 +18,13 @@ driver.back()
 LoginEmail = driver.find_element_by_id("idEmailAddress")
 LoginEmail.click()
 LoginEmail.clear()
-LoginEmail.send_keys("")
+LoginEmail.send_keys(" ")
 
 # click, clear and type login password
 LoginPassword = driver.find_element_by_id("idPassword")
 LoginPassword.click()
 LoginPassword.clear()
-LoginPassword.send_keys("")
+LoginPassword.send_keys(" ")
 
 # click login button
 LoginButton = driver.find_element_by_id("loginButton")
@@ -42,11 +42,46 @@ driver.implicitly_wait(10)
 LogoIcon = driver.find_element_by_xpath("//*[@alt=' ']")
 
 if LogoIcon.is_displayed():
-    print("TUO")
+    print("Logo icon is visible")
 else:
     print("Logo icon is NOT visible")
 
 # verify the search bar
-#SearchBar = driver.find_element_by_id("idSearch")
-#SearchBar.send_keys("big")
+SearchBar = driver.find_element_by_id("idSearch")
+SearchBar.click()
+SearchBar.clear()
+SearchBar.send_keys("big")
+driver.implicitly_wait(10)
 
+# verify POC status
+PocStatus = driver.find_element_by_xpath("//*[@class = 'is-hidden-mobile is-primary is-right is-medium is-always is-multiline']")
+PocStatus.click()
+
+# clear search bar
+SearchBar.click()
+SearchBar.clear()
+
+# client detail sorting
+
+# verify dropdown menu bar
+DropdownMenu = driver.find_element_by_id("idMenuButton")
+DropdownMenu.click()
+
+# verify support button
+#SupportButton = driver.find_element_by_id("idSupportButton")
+#SupportButton.click()
+
+# verify change password button
+ChangePassword = driver.find_element_by_id("idChangePasswordButton")
+ChangePassword.click()
+
+# cancel password change
+PasswordChangeCancel = driver.find_element_by_id("idPasswordChangeCancel")
+PasswordChangeCancel.click()
+driver.implicitly_wait(10)
+
+# verify logout button
+DropdownMenu = driver.find_element_by_id("idMenuButton")
+DropdownMenu.click()
+LogoutButton = driver.find_element_by_id("logoutButton")
+LogoutButton.click()
