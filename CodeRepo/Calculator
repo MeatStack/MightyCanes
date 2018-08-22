@@ -1,0 +1,13 @@
+#define meal
+meal = 44.50
+
+#calculate tax and tip
+tax = 6.75 / 100
+tip = 15.0 / 100
+
+#calculate meal
+meal = meal + meal*tax
+
+#calculate total
+total = meal + meal*tip
+print total
