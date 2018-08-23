@@ -2,10 +2,20 @@
 Prompt the user to select a shape.
 Calculate the area of that shape.
 Print the area of that shape to the user."""
+
 print "Calculator is starting"
+
 name = raw_input("What's your name? ")
+
 option = raw_input("Enter C for Circle or T for Triangle: ")
+
 if option == "C":
   radius = float(raw_input("Enter the radius "))
   area = 3.14159*radius**2
   print float(area)
+  
+elif option == "T":
+  base = float(raw_input("Enter the base of triangle "))
+  height = float(raw_input("Enter the height of the triangle "))
+  area = 0.5*base*height
+  print int(area)
