@@ -1,0 +1,51 @@
+zoo_animals = ["pangolin", "cassowary", "sloth", ];
+# One animal is missing!
+
+if len(zoo_animals) > 3:
+  print "The first animal at the zoo is the " + zoo_animals[0]
+  print "The second animal at the zoo is the " + zoo_animals[1]
+  print "The third animal at the zoo is the " + zoo_animals[2]
+  print "The fourth animal at the zoo is the " + zoo_animals[3]
+----------------------------------------------------------------
+from time import sleep
+numbers = [5, 6, 7, 8]
+
+print "Adding the numbers at indices 0 and 2..."
+sleep(2)
+print numbers[0] + numbers[2]
+sleep(2)
+print "Adding the numbers at indices 1 and 3..."
+sleep(2)
+print numbers[1] + numbers[3]
+----------------------------------------------------------------
+suitcase = [] 
+suitcase.append("sunglasses")
+
+# Your code here!
+suitcase.append("Bathing suit")
+suitcase.append("Rugby ball")
+suitcase.append("Canes jersey")
+middle = suitcase[1:4]
+last = suticase[3:4]
+print middle
+print last
+
+
+list_length = len(suitcase) # Set this to the length of suitcase
+
+print "There are %d items in the suitcase." % (list_length)
+print suitcase
+----------------------------------------------------------------
+suitcase = ["sunglasses", "hat", "passport", "laptop", "suit", "shoes"]
+
+# The first and second items (index zero and one)
+first = suitcase[0:2]
+
+# Third and fourth items (index two and three)
+middle = suitcase[2:4]
+print middle
+
+# The last two items (index four and five)
+last =  suitcase[4:6]
+print last
+----------------------------------------------------------------
