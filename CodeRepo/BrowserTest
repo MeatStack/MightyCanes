@@ -85,3 +85,74 @@ DropdownMenu = driver.find_element_by_id("idMenuButton")
 DropdownMenu.click()
 LogoutButton = driver.find_element_by_id("logoutButton")
 LogoutButton.click()
+# -------------------------------------------------------------------------
+import unittest
+from IETessaTest.Src.Page_Object import Login
+from selenium import webdriver
+from time import sleep
+import HtmlTestRunner
+
+
+class TestLogin(unittest.TestCase):
+    def setUp(self):
+        self.driver = webdriver.Ie()
+        self.driver.maximize_window()
+        self.driver.implicitly_wait(5)
+        self.base_url = 'https://tessaus.invacare-o2.com'
+        self.driver.delete_cookie(self.base_url)
+
+    def test_LoginSucceed(self):
+        browser = self.driver
+        browser.get(self.base_url)
+
+        login = Login(browser)
+        login.username('test@web.test')
+        login.password('password')
+        login.clickLogin()
+        sleep(2)
+
+    def test_Login_InvalidEmail(self):
+        browser = self.driver
+        browser.get(self.base_url)
+
+        login = Login(browser)
+        login.username('invalid@email.test')
+        login.username('password')
+        login.clickLogin()
+
+        assert login.error() == 'Incorrect username or password.'
+        sleep(2)
+
+    def test_Login_InvalidPassword(self):
+        browser = self.driver
+        browser.get(self.base_url)
+
+        login = Login(browser)
+        login.username('test@web.test')
+        login.password('invalidpassword')
+        login.clickLogin()
+
+        assert login.error() == 'Incorrect username or password.'
+
+    def test_Login_InvalidEmailPassword(self):
+        browser = self.driver
+        browser.get(self.base_url)
+
+        login = Login(browser)
+        login.username('invalid@email.test')
+        login.password('invalidpassword')
+        login.clickLogin()
+
+        assert login.error() == 'Incorrect username or password.'
+
+    #def test_Login_EmptyEmail(self):
+
+
+
+    def tearDown(self):
+        self.driver.close()
+        self.driver.quit()
+
+
+if __name__ == "__main__":
+    HtmlTestRunner.main()
